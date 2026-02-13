@@ -1,0 +1,132 @@
+[
+  {
+    "id": "panda",
+    "name": "Panda Gergasi (Giant Panda)",
+    "category": "Animal",
+    "xPct": 20.0,
+    "yPct": 29.0,
+    "description": "A bamboo-loving bear known for its black and white markings.",
+    "details": [
+      "Native to mountain forests in China.",
+      "Spends many hours eating bamboo.",
+      "Strong climber and swimmer."
+    ]
+  },
+  {
+    "id": "orangutan",
+    "name": "Orang Utan",
+    "category": "Animal",
+    "xPct": 37.0,
+    "yPct": 18.0,
+    "description": "An intelligent great ape from Borneo and Sumatra.",
+    "details": [
+      "Its name means person of the forest.",
+      "Builds a new tree nest almost every night.",
+      "Uses simple tools in the wild."
+    ]
+  },
+  {
+    "id": "chimpanzee",
+    "name": "Cimpanzi (Chimpanzee)",
+    "category": "Animal",
+    "xPct": 31.0,
+    "yPct": 21.0,
+    "description": "A social ape that lives in large family groups.",
+    "details": [
+      "Communicates with calls and gestures.",
+      "Shares close DNA links with humans.",
+      "Very curious and playful."
+    ]
+  },
+  {
+    "id": "giraffe",
+    "name": "Zirafah (Giraffe)",
+    "category": "Animal",
+    "xPct": 51.0,
+    "yPct": 31.0,
+    "description": "The tallest land animal, adapted for browsing treetops.",
+    "details": [
+      "Long neck with seven vertebrae.",
+      "Each giraffe has a unique spot pattern.",
+      "Can run surprisingly fast."
+    ]
+  },
+  {
+    "id": "zebra",
+    "name": "Zebra",
+    "category": "Animal",
+    "xPct": 49.0,
+    "yPct": 44.0,
+    "description": "A striped grazer that often moves in herds.",
+    "details": [
+      "Every stripe pattern is different.",
+      "Stripes can confuse predators.",
+      "Very alert and social."
+    ]
+  },
+  {
+    "id": "asian_elephant",
+    "name": "Gajah Asia (Asian Elephant)",
+    "category": "Animal",
+    "xPct": 25.0,
+    "yPct": 51.0,
+    "description": "A highly intelligent herbivore with a versatile trunk.",
+    "details": [
+      "Uses trunk for feeding, smelling, and touch.",
+      "Lives in close family groups.",
+      "Plays an important role in forest ecosystems."
+    ]
+  },
+  {
+    "id": "malayan_tiger",
+    "name": "Harimau Malaya (Malayan Tiger)",
+    "category": "Animal",
+    "xPct": 37.0,
+    "yPct": 57.0,
+    "description": "Malaysia's iconic big cat and a critically endangered species.",
+    "details": [
+      "Excellent swimmer.",
+      "Uses stealth and camouflage to hunt.",
+      "Needs strong conservation support."
+    ]
+  },
+  {
+    "id": "hippopotamus",
+    "name": "Kuda Nil (Hippopotamus)",
+    "category": "Animal",
+    "xPct": 58.0,
+    "yPct": 69.0,
+    "description": "A massive semi-aquatic mammal that spends much of the day in water.",
+    "details": [
+      "Can hold breath underwater for several minutes.",
+      "Comes out to graze mostly at night.",
+      "Looks calm but is very powerful."
+    ]
+  },
+  {
+    "id": "penguin",
+    "name": "Penguin",
+    "category": "Animal",
+    "xPct": 67.0,
+    "yPct": 73.0,
+    "description": "A flightless seabird built for swimming.",
+    "details": [
+      "Uses flippers to move quickly underwater.",
+      "Dense feathers help keep heat in.",
+      "Lives in colonies with strong social behavior."
+    ]
+  },
+  {
+    "id": "sun_bear",
+    "name": "Beruang Madu (Sun Bear)",
+    "category": "Animal",
+    "xPct": 66.0,
+    "yPct": 38.0,
+    "description": "The smallest bear species, native to Southeast Asia.",
+    "details": [
+      "Known for a pale chest mark.",
+      "Has a very long tongue for honey and insects.",
+      "Excellent tree climber."
+    ]
+  }
+]

@@ -1,0 +1,507 @@
+:root {
+  --bg: #f4f7f2;
+  --green-900: #0f4c3a;
+  --green-700: #1f7a58;
+  --green-500: #25a36f;
+  --cream: #fffef8;
+  --ink: #102619;
+  --muted: #355248;
+  --danger: #dd3d2a;
+  --shadow: 0 16px 40px rgba(18, 49, 35, 0.22);
+  --marker-size: clamp(18px, 2.8vw, 26px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--ink);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 0.72rem 1.2rem;
+  transition: transform 0.16s ease, filter 0.16s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px) scale(1.01);
+  filter: brightness(1.03);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--primary {
+  color: #f7fff9;
+  background: linear-gradient(135deg, var(--green-900), var(--green-500));
+  box-shadow: 0 10px 20px rgba(15, 76, 58, 0.3);
+}
+
+.btn--ghost {
+  color: var(--green-900);
+  background: #edf7f0;
+  border: 1px solid #c4decf;
+}
+
+.btn--large {
+  min-width: 190px;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+}
+
+/* Welcome page */
+.welcomeBody {
+  background: #06090d;
+  overflow: hidden;
+}
+
+.welcome {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: clamp(0.9rem, 2.4vw, 1.4rem);
+  isolation: isolate;
+}
+
+.welcome__bg {
+  position: absolute;
+  inset: -15px;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(0, 240, 183, 0.18), transparent 45%),
+    radial-gradient(circle at 86% 18%, rgba(255, 179, 0, 0.14), transparent 42%),
+    radial-gradient(circle at 62% 88%, rgba(75, 161, 255, 0.16), transparent 48%),
+    linear-gradient(180deg, rgba(6, 9, 13, 0.55), rgba(6, 9, 13, 0.88)),
+    url("brand/welcome-bg.svg") center/cover no-repeat;
+  filter: saturate(1.08) contrast(1.04);
+  transform: scale(1.03);
+  animation: drift 14s ease-in-out infinite;
+  z-index: 0;
+}
+
+.welcome__noise {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.09;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='230' height='230'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='230' height='230' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
+}
+
+.welcomeCard {
+  position: relative;
+  z-index: 1;
+  width: min(860px, 100%);
+  border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(7, 19, 14, 0.66);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.44);
+  padding: clamp(1.2rem, 2.8vw, 1.9rem);
+  text-align: center;
+  overflow: auto;
+  max-height: calc(100dvh - 1.8rem);
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(var(--welcome-rx, 0deg)) rotateY(var(--welcome-ry, 0deg));
+  transition: transform 220ms ease;
+}
+
+.welcomeCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(560px circle at var(--mx, 50%) var(--my, 24%),
+      rgba(255, 255, 255, 0.16),
+      rgba(255, 255, 255, 0.05) 34%,
+      transparent 62%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.welcomeCard > * {
+  position: relative;
+  z-index: 1;
+}
+
+.welcomeCard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.welcomeBrand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.welcomeBrand__logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 5px;
+}
+
+.welcomeBrand__name {
+  font-weight: 800;
+  color: #f2fff8;
+  font-size: 0.92rem;
+}
+
+.welcomeBrand__sub {
+  margin-top: 0.12rem;
+  color: #bfdac8;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.welcomeBadge {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ebfff4;
+  font-weight: 700;
+  font-size: 0.76rem;
+  padding: 0.34rem 0.62rem;
+  white-space: nowrap;
+}
+
+.welcomeCard__eyebrow {
+  margin: 0;
+  color: #8de8ba;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.78rem;
+}
+
+.welcomeCard__title {
+  margin: 0.58rem 0 0.45rem;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  line-height: 1.02;
+  color: #f0fff7;
+  text-wrap: balance;
+}
+
+.welcomeCard__subtitle {
+  margin: 0 auto 1rem;
+  max-width: 56ch;
+  font-size: 1rem;
+  color: #c4e4d2;
+  line-height: 1.55;
+}
+
+.welcomeCard__chips {
+  display: flex;
+  justify-content: center;
+  gap: 0.42rem;
+  flex-wrap: wrap;
+}
+
+.welcomeChip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.09);
+  color: #e2fff1;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.34rem 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.welcomeCard__actions {
+  margin-top: 0.9rem;
+}
+
+.welcomeCard__stats {
+  margin-top: 0.9rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.46rem;
+}
+
+.welcomeStat {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.56rem 0.48rem;
+}
+
+.welcomeStat__value {
+  font-weight: 900;
+  color: #f6fff9;
+  font-size: 0.95rem;
+}
+
+.welcomeStat__label {
+  margin-top: 0.18rem;
+  font-size: 0.76rem;
+  color: #c4e4d2;
+}
+
+.welcomeCard__note {
+  margin: 0.9rem 0 0;
+  color: #afcfbe;
+  font-size: 0.8rem;
+}
+
+@keyframes drift {
+  0% {
+    transform: scale(1.03) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.03) translate3d(0.8%, -0.9%, 0);
+  }
+  100% {
+    transform: scale(1.03) translate3d(0, 0, 0);
+  }
+}
+
+/* Map-only page */
+.mapOnlyBody {
+  overflow: hidden;
+  background: #cfced1;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mapStage {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  height: 100dvh;
+}
+
+.mapViewport {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  touch-action: none;
+  outline: none;
+  cursor: grab;
+}
+
+.mapViewport.is-dragging {
+  cursor: grabbing;
+}
+
+.mapInner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#mapImage {
+  display: block;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+}
+
+.markerLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.marker {
+  position: absolute;
+  width: var(--marker-size);
+  height: var(--marker-size);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  background: var(--danger);
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.28);
+  animation: pulse 1.6s ease-out infinite;
+  pointer-events: auto;
+}
+
+.marker::after {
+  content: "";
+  position: absolute;
+  width: calc(var(--marker-size) * 0.38);
+  height: calc(var(--marker-size) * 0.38);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #fff5f2;
+}
+
+.marker--selected {
+  box-shadow: 0 0 0 5px rgba(221, 61, 42, 0.25), 0 6px 18px rgba(0, 0, 0, 0.35);
+  animation: none;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(221, 61, 42, 0.48), 0 6px 12px rgba(0, 0, 0, 0.22);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(221, 61, 42, 0), 0 6px 12px rgba(0, 0, 0, 0.22);
+  }
+}
+
+.popover {
+  position: absolute;
+  z-index: 50;
+  width: min(330px, calc(100vw - 1.2rem));
+  max-height: min(78dvh, 560px);
+  overflow-y: auto;
+  background: color-mix(in srgb, #ffffff 90%, #ecf6ef 10%);
+  color: var(--ink);
+  border: 1px solid #cae3d5;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 0.85rem 0.95rem 0.95rem;
+}
+
+.popover__title {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  padding-right: 2rem;
+}
+
+.popover__meta {
+  margin: 0.32rem 0 0;
+  color: #406254;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.popover__media {
+  margin-top: 0.58rem;
+}
+
+.popover__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid #cbe4d5;
+  background: #dceadf;
+}
+
+.popover__description {
+  margin: 0.65rem 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.popover__facts {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: #1e3c31;
+  font-size: 0.87rem;
+  line-height: 1.45;
+}
+
+.popover__actions {
+  margin-top: 0.8rem;
+}
+
+.iconBtn {
+  position: absolute;
+  right: 0.55rem;
+  top: 0.55rem;
+  border: 1px solid #bfd9cb;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 50%;
+  background: #f7fff9;
+  cursor: pointer;
+  font-weight: 700;
+  color: #325648;
+}
+
+.iconBtn:hover {
+  background: #edf8f0;
+}
+
+.popover--mobile {
+  width: min(380px, calc(100vw - 1rem));
+  padding-bottom: calc(0.95rem + env(safe-area-inset-bottom));
+}
+
+@media (max-width: 760px) {
+  .welcomeCard {
+    border-radius: 22px;
+    max-height: calc(100dvh - 1.2rem);
+    padding: 1rem;
+  }
+
+  .welcomeCard__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .welcomeCard__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .popover {
+    width: min(360px, calc(100vw - 1rem));
+    max-height: min(72dvh, 540px);
+    border-radius: 16px;
+  }
+
+  .iconBtn {
+    width: 2.15rem;
+    height: 2.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome__bg {
+    animation: none;
+  }
+
+  .welcomeCard {
+    transition: none;
+    transform: none;
+  }
+}

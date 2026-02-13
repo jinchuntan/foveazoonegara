@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>SafariLens AR Map | Zoo Negara</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="mapOnlyBody">
+  <main id="mapStage" class="mapStage" aria-label="Zoo Negara interactive animal map">
+    <div id="mapViewport" class="mapViewport" tabindex="0" aria-label="Map viewport">
+      <div id="mapInner" class="mapInner">
+        <img id="mapImage" src="zoo_map.jpg" alt="Zoo Negara map" draggable="false" />
+        <div id="markerLayer" class="markerLayer"></div>
+      </div>
+    </div>
+
+    <article id="popover" class="popover" hidden role="dialog" aria-labelledby="popoverTitle">
+      <button id="btnClosePopover" class="iconBtn" aria-label="Close animal details">x</button>
+      <h2 id="popoverTitle" class="popover__title"></h2>
+      <p id="popoverMeta" class="popover__meta"></p>
+      <div class="popover__media">
+        <canvas id="popoverImageCanvas" class="popover__image" width="320" height="180" role="img" aria-label="Animal preview image"></canvas>
+      </div>
+      <p id="popoverDescription" class="popover__description"></p>
+      <ul id="popoverFacts" class="popover__facts"></ul>
+      <div class="popover__actions">
+        <a class="btn btn--primary" href="scan/index.html">Scan in WebAR</a>
+      </div>
+    </article>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

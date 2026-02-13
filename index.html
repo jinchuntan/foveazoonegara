@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>SafariLens AR | Zoo Negara</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="welcomeBody">
+  <main class="welcome">
+    <div class="welcome__bg" aria-hidden="true"></div>
+    <div class="welcome__noise" aria-hidden="true"></div>
+
+    <section id="welcomeCard" class="welcomeCard" aria-labelledby="welcomeTitle">
+      <header class="welcomeCard__header">
+        <div class="welcomeBrand">
+          <img src="brand/fovea-logo.png" alt="Fovea logo" class="welcomeBrand__logo" />
+          <div>
+            <div class="welcomeBrand__name">Fovea x Zoo Negara</div>
+            <div class="welcomeBrand__sub">WebAR Experience</div>
+          </div>
+        </div>
+        <div class="welcomeBadge">Live Prototype</div>
+      </header>
+
+      <p class="welcomeCard__eyebrow">Zoo Negara Malaysia</p>
+      <h1 id="welcomeTitle" class="welcomeCard__title">Welcome to SafariLens AR</h1>
+      <p class="welcomeCard__subtitle">
+        Explore the zoo through an interactive map, discover animal stories, and launch scanning with one tap.
+      </p>
+
+      <div class="welcomeCard__chips" aria-label="Experience highlights">
+        <span class="welcomeChip">Interactive map</span>
+        <span class="welcomeChip">Animal hotspots</span>
+        <span class="welcomeChip">In-page popups</span>
+        <span class="welcomeChip">AR scan mode</span>
+      </div>
+
+      <div class="welcomeCard__stats" aria-hidden="true">
+        <div class="welcomeStat">
+          <div class="welcomeStat__value">10</div>
+          <div class="welcomeStat__label">Markers</div>
+        </div>
+        <div class="welcomeStat">
+          <div class="welcomeStat__value">1 Tap</div>
+          <div class="welcomeStat__label">Animal details</div>
+        </div>
+        <div class="welcomeStat">
+          <div class="welcomeStat__value">WebAR</div>
+          <div class="welcomeStat__label">Scan gateway</div>
+        </div>
+      </div>
+
+      <div class="welcomeCard__actions">
+        <a class="btn btn--primary btn--large" href="map.html">Enter the Map</a>
+      </div>
+
+      <p class="welcomeCard__note">
+        Best viewed on mobile for camera scanning.
+      </p>
+    </section>
+  </main>
+  <script src="welcome.js"></script>
+</body>
+</html>

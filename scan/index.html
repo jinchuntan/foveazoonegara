@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>SafariLens AR Scanner</title>
+  <link rel="stylesheet" href="./scan.css" />
+</head>
+<body>
+  <main id="arContainer" class="arContainer" aria-label="SafariLens AR Scanner"></main>
+
+  <section class="scanPanel" aria-live="polite">
+    <header class="scanPanel__header">
+      <div>
+        <h1 class="scanPanel__title">SafariLens Scanner</h1>
+        <p id="scanStatus" class="scanPanel__status">Tap start and point your camera at a supported scan card.</p>
+      </div>
+      <a class="scanPanel__back" href="../map.html">Back to map</a>
+    </header>
+
+    <div class="scanPanel__card">
+      <h2 id="cardTitle" class="scanCard__title">No target detected</h2>
+      <p id="cardCategory" class="scanCard__category">Waiting for camera start...</p>
+      <p id="cardFact" class="scanCard__fact">When a target is detected, animal facts will appear here.</p>
+    </div>
+
+    <div class="scanPanel__actions">
+      <button id="btnStart" class="scanBtn scanBtn--primary" type="button">Start Scanner</button>
+      <button id="btnPrev" class="scanBtn" type="button" disabled>Prev Fact</button>
+      <button id="btnNext" class="scanBtn" type="button" disabled>Next Fact</button>
+      <button id="btnCollect" class="scanBtn" type="button" disabled>Collect</button>
+    </div>
+
+    <p id="collectStatus" class="scanPanel__collect"></p>
+  </section>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.151.3/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.151.3/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="./scan.js"></script>
+</body>
+</html>

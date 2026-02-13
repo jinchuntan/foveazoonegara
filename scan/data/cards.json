@@ -1,0 +1,37 @@
+{
+  "cards": [
+    {
+      "id": "tiger-card",
+      "name": "Harimau Malaya",
+      "category": "Big Cat",
+      "targetIndex": 0,
+      "facts": [
+        "The Malayan tiger is critically endangered in the wild.",
+        "Tigers are strong swimmers and often cool down in water.",
+        "Each tiger has a unique stripe pattern."
+      ]
+    },
+    {
+      "id": "elephant-card",
+      "name": "Gajah Asia",
+      "category": "Mega Herbivore",
+      "targetIndex": 1,
+      "facts": [
+        "Asian elephants use their trunk for breathing, feeding, and social touch.",
+        "Elephants can communicate over long distances using low-frequency sounds.",
+        "They play a key role in shaping forest ecosystems."
+      ]
+    },
+    {
+      "id": "penguin-card",
+      "name": "Penguin",
+      "category": "Aquatic Bird",
+      "targetIndex": 2,
+      "facts": [
+        "Penguins are flightless birds built for swimming, not flying.",
+        "Dense feathers and body fat help penguins stay warm.",
+        "Many penguin species gather in large social colonies."
+      ]
+    }
+  ]
+}
